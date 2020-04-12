@@ -7,13 +7,10 @@ import {fetchItems} from '../actions/index';
 import PropTypes from 'prop-types';
 
 function MainTemplate({children, fetchWallpapers}) {
-    const keywords = 'cat';
-
 
     useEffect(() => {
-        fetchWallpapers(keywords);
+        fetchWallpapers();
     }, []);
-
 
     return (
         <div>
@@ -33,6 +30,6 @@ MainTemplate.propTypes = {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchWallpapers: (keywords) => dispatch(fetchItems(keywords)),
+    fetchWallpapers: () => dispatch(fetchItems()),
 });
 export default connect(null, mapDispatchToProps)(MainTemplate);

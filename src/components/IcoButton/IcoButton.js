@@ -1,26 +1,30 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const Button = styled.button`
-  background-color: rgba(0, 0, 0, 0.6);
+const IcoButton = styled.button`
+  color: ${({theme}) => theme.white};
   border: none;
-  border-radius: 13px;
+  border-radius: 10px;
   color: ${({theme}) => theme.primary};
-  width: 41px;
-  height: 41px;
-  transition: transform 0.3s ease-out;
-  padding: 4px;
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease-in;
+  margin: 5px;
   cursor: pointer;
-
+  background-image: url(${({ icon }) => icon});
+  background-position: 50% 50%;
+  background-size: 70%;
+  background-repeat: no-repeat;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 `;
 
-const IcoButton = () => (
-    <Button/>
-);
 
+
+// IcoButton.propTypes = {
+//     icon: PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.node, PropTypes.object])
+//         .isRequired,
+// };
 
 export default IcoButton;

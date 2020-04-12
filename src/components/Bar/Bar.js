@@ -6,14 +6,14 @@ import logoIcon from '../../assets/logo.svg';
 import {NavLink} from 'react-router-dom';
 
 const BarWrapper = styled.div`
-    //position: fixed;
     width: 80vw;
     height: 20vh;
     background-color: ${({theme}) => theme.primary};
     display: flex;
-    //flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 `
 
 const StyledLogoLink = styled.div`
@@ -31,10 +31,10 @@ const StyledLogoLink = styled.div`
 
 const Bar = () => (
     <BarWrapper>
-        <StyledLogoLink/>
-        <Button as={NavLink} to="/">images</Button>
+        <StyledLogoLink as={NavLink} to="/"/>
+        <Button as={NavLink} to="/">main</Button>
         <Button as={NavLink} to="/fav">favourites</Button>
-        <SearchBar/>
+        {/*<SearchBar/>*/}
     </BarWrapper>
 )
 

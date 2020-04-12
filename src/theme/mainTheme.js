@@ -1,5 +1,5 @@
 export const theme = {
-    primary: 'hsl(49, 100%, 58%)',
+    primary: 'hsla(211, 100%, 50%, 1)',
     secondary: 'hsl(196, 83%, 75%)',
     grey100: 'hsl(0, 0%, 96%)',
     grey200: 'hsl(0, 0%, 90%)',

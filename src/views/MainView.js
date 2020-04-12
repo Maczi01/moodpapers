@@ -14,7 +14,7 @@ MainView.propTypes = {
             id: PropTypes.string,
             imageUrl: PropTypes.string,
             fullsizeUrl: PropTypes.string,
-            autor: PropTypes.string,
+            author: PropTypes.string,
             tags: PropTypes.array,
         }),
     ),
