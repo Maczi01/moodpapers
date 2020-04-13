@@ -9,12 +9,12 @@ export const fav = 'FAV';
 const API_URL = 'https://api.unsplash.com/photos/random/';
 const API_KEY = 'hu5CTMbpLUHq5f11bxjLsxsz1sm9g5QhbSV7eTue9k4'
 
-export const addToFavorites = (image) => {
+export const addToFavorites = (newFavorite) => {
     const localStorageState = JSON.parse(localStorage.getItem(fav)) || [];
-    localStorage.setItem(fav, JSON.stringify([...localStorageState, image]));
+    localStorage.setItem(fav, JSON.stringify([...localStorageState, newFavorite]));
     return {
         type: ADD_FAVORITE,
-        payload: {image},
+        payload: {newFavorite},
     };
 };
 

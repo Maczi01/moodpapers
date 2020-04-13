@@ -70,7 +70,8 @@ PhotoWrapper.propTypes = {
             id: PropTypes.string,
             imageUrl: PropTypes.string,
             fullsizeUrl: PropTypes.string,
-            author: PropTypes.string,
+            autor: PropTypes.string,
+            tags: PropTypes.array,
         }),
     ).isRequired,
     favorites: PropTypes.arrayOf(
@@ -78,7 +79,8 @@ PhotoWrapper.propTypes = {
             id: PropTypes.string,
             imageUrl: PropTypes.string,
             fullsizeUrl: PropTypes.string,
-            author: PropTypes.string,
+            autor: PropTypes.string,
+            tags: PropTypes.array,
         }),
     ),
     addToFavorites: PropTypes.func.isRequired,
@@ -95,7 +97,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = (dispatch) => ({
-    addToFavorites: (image) => dispatch(addToFavorites(image)),
+    addToFavorites: (newFavorite) => dispatch(addToFavorites(newFavorite)),
     removeFromFavorites: (imageUrl) => dispatch(removeFromFavorites(imageUrl)),
 });
 

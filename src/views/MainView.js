@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React from 'react'
 import GridTemplate from "../templates/GridTemplate";
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
@@ -26,4 +26,3 @@ MainView.defaultProps = {
 const mapStateToProps = ({wallpapers}) => ({wallpapers});
 
 export default connect(mapStateToProps)(MainView);
-;

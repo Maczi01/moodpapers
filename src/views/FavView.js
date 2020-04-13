@@ -10,12 +10,12 @@ const mapStateToProps = ({ favorites }) => {
 };
 
 FavView.propTypes = {
-    wallpapers: PropTypes.arrayOf(
+    favorites: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
             imageUrl: PropTypes.string,
             fullsizeUrl: PropTypes.string,
-            author: PropTypes.string,
+            autor: PropTypes.string,
             tags: PropTypes.array,
         }),
     ),

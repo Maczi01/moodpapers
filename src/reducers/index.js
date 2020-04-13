@@ -1,4 +1,5 @@
 import {FETCH_SUCCESS, FETCH_FAILURE, ADD_FAVORITE, REMOVE_FAVORITE} from '../actions/index';
+
 export const fav = 'FAV'
 
 const initialState = {
@@ -10,7 +11,7 @@ const initialState = {
 const rootReducer = (state = initialState, {type, payload}) => {
     switch (type) {
         case FETCH_SUCCESS: {
-            return { ...state, wallpapers: payload.data, currentKeywords: payload.data.keywords };
+            return {...state, wallpapers: payload.data, currentKeywords: payload.data.keywords};
         }
         case FETCH_FAILURE: {
             return state;
