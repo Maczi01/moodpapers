@@ -21,7 +21,7 @@ const GridTemplate = ({cards}) => (
         <StyledWrapper>
             <StyledGrid>
                 {cards.map((card) => (
-                    <PhotoWrapper key={card.id} card={card}/>
+                    <PhotoWrapper key={card.id} card={card} />
                 ))}
             </StyledGrid>
         </StyledWrapper>

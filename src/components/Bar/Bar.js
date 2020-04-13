@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import Button from "../Button/Button";
-import SearchBar from "../SearchBar/SearchBar";
 import logoIcon from '../../assets/logo.svg';
 import {NavLink} from 'react-router-dom';
 
@@ -25,16 +24,14 @@ const StyledLogoLink = styled.div`
     background-position: 50% 50%;
     background-size: 80%;
     border: none;
-    //margin-bottom: 10vh;
     margin: 10px;
 `;
 
 const Bar = () => (
     <BarWrapper>
-        <StyledLogoLink as={NavLink} to="/"/>
-        <Button as={NavLink} to="/">main</Button>
-        <Button as={NavLink} to="/fav">favourites</Button>
-        {/*<SearchBar/>*/}
+        <StyledLogoLink as={NavLink} to="/" />
+        <Button exact as={NavLink} to="/" activeclass="active">main</Button>
+        <Button as={NavLink} to="/fav" activeclass="active">favourites</Button>
     </BarWrapper>
 )
 

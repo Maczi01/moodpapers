@@ -10,14 +10,13 @@ const Button = styled.button`
     background-color: ${({theme}) => theme.white};
     width: 220px;
     height: 50px;
-    //border: none;
     border-radius: 50px;
     font-weight: 600;
     font-size: 16px;
     border: 3px black solid;
-    //text-transform: uppercase;
-   &.active {
-  }
+    &.active {
+      text-decoration: underline;
+    }
 `;
 
 export default Button;

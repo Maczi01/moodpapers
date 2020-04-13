@@ -8,37 +8,20 @@ export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
 export const fav = 'FAV';
 const API_URL = 'https://api.unsplash.com/photos/random/';
 const API_KEY = 'hu5CTMbpLUHq5f11bxjLsxsz1sm9g5QhbSV7eTue9k4'
-let keyword = '';
 
-const currentCondition = () => {
-    return axios
-        .get('https://api.weatherapi.com/v1/forecast.json?key=3f1ad206d1b94436825173623201101&q=paris')
-        .then(res => (
-                keyword = res.data.current.condition.text
-            )
-        )
-        .catch(err => {
-            console.log(err);
-        })
-};
-currentCondition();
-
-export const addToFavorites = (newFavorite) => {
-    const prevLocalstorageState = JSON.parse(localStorage.getItem(fav)) || [];
-    localStorage.setItem(fav, JSON.stringify([...prevLocalstorageState, newFavorite]));
+export const addToFavorites = (image) => {
+    const localStorageState = JSON.parse(localStorage.getItem(fav)) || [];
+    localStorage.setItem(fav, JSON.stringify([...localStorageState, image]));
     return {
         type: ADD_FAVORITE,
-        payload: {newFavorite},
+        payload: {image},
     };
 };
 
-
-
 export const removeFromFavorites = (id) => {
-    const prevLocalstorageState = JSON.parse(localStorage.getItem(fav)) || [];
-    localStorage.setItem(fav, JSON.stringify(prevLocalstorageState.filter((item) => item.id !== id)),
+    const localStorageState = JSON.parse(localStorage.getItem(fav)) || [];
+    localStorage.setItem(fav, JSON.stringify(localStorageState.filter((item) => item.id !== id)),
     );
-
     return {
         type: REMOVE_FAVORITE,
         payload: {
@@ -47,25 +30,22 @@ export const removeFromFavorites = (id) => {
     };
 };
 
-export const fetchItems = (keywords) => (dispatch) => {
+export const fetchItems = () => (dispatch) => {
     dispatch({type: FETCH_REQUEST});
-    return axios.get('https://api.unsplash.com/photos/random/', {
+    return axios.get(API_URL, {
         params: {
-            // client_id: 'IAZAW_X0oAiauBtvVa5VEhYiCgSlcrfUYeXWaOIeaKs',
-            client_id: 'hu5CTMbpLUHq5f11bxjLsxsz1sm9g5QhbSV7eTue9k4',
-            count: 9,
-            query: keyword,
+            client_id: API_KEY,
+            count: 12,
+            query: getDayPart(new Date()),
         },
         transformResponse: axios.defaults.transformResponse.concat((data) =>
             data.map(({id, urls, user}) => ({
-                id,
+                id: id.toString(),
                 imageUrl: urls.regular,
                 fullsizeUrl: urls.raw,
                 author: user.name,
-                tags: keywords,
             })),
         ),
-
     })
         .then((data) => {
             dispatch({
@@ -76,4 +56,12 @@ export const fetchItems = (keywords) => (dispatch) => {
         .catch((err) => {
             console.error(err)
         });
+};
+
+export const getDayPart = (Date) => {
+    const currentHour = Date.getHours();
+    if (currentHour >= 5 && currentHour < 12) return 'morning';
+    if (currentHour >= 12 && currentHour < 18) return 'afternoon';
+    if (currentHour >= 18 && currentHour < 21) return 'evening';
+    return 'night';
 };

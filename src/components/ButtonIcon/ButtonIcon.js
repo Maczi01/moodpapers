@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const IcoButton = styled.button`
+const ButtonIcon = styled.button`
   color: ${({theme}) => theme.white};
   border: none;
   border-radius: 10px;
@@ -11,7 +10,7 @@ const IcoButton = styled.button`
   transition: transform 0.3s ease-in;
   margin: 5px;
   cursor: pointer;
-  background-image: url(${({ icon }) => icon});
+  background-image: url(${({icon}) => icon});
   background-position: 50% 50%;
   background-size: 70%;
   background-repeat: no-repeat;
@@ -20,11 +19,4 @@ const IcoButton = styled.button`
   }
 `;
 
-
-
-// IcoButton.propTypes = {
-//     icon: PropTypes.oneOfType([PropTypes.func, PropTypes.string, PropTypes.node, PropTypes.object])
-//         .isRequired,
-// };
-
-export default IcoButton;
+export default ButtonIcon;

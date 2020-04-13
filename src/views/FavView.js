@@ -1,5 +1,4 @@
 import React from 'react'
-import PhotoWrapper from "../components/PhotoWrapper/PhotoWrapper";
 import GridTemplate from "../templates/GridTemplate";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
