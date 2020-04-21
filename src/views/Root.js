@@ -11,7 +11,7 @@ const Root = () => (
         <BrowserRouter>
             <MainTemplate>
                 <Switch>
-                    <Route exact path="/" component={MainView}/>} />
+                    <Route exact path="/" component={MainView}/> />
                     <Route path="/fav" component={FavView}/>} />
                 </Switch>
             </MainTemplate>

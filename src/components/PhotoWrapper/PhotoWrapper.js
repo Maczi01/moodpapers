@@ -65,15 +65,15 @@ const PhotoWrapper = ({card, favorites, addToFavorites, removeFromFavorites}) =>
 }
 
 PhotoWrapper.propTypes = {
-    card: PropTypes.objectOf(
-        PropTypes.shape({
-            id: PropTypes.string,
-            imageUrl: PropTypes.string,
-            fullsizeUrl: PropTypes.string,
-            autor: PropTypes.string,
-            tags: PropTypes.array,
-        }),
-    ).isRequired,
+    // card: PropTypes.objectOf(
+    //     PropTypes.shape({
+    //         id: PropTypes.string,
+    //         imageUrl: PropTypes.string,
+    //         fullsizeUrl: PropTypes.string,
+    //         autor: PropTypes.string,
+    //         tags: PropTypes.array,
+    //     }),
+    // ).isRequired,
     favorites: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,

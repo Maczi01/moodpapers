@@ -40,7 +40,7 @@ export const fetchItems = () => (dispatch) => {
         },
         transformResponse: axios.defaults.transformResponse.concat((data) =>
             data.map(({id, urls, user}) => ({
-                id: id.toString(),
+                id,
                 imageUrl: urls.regular,
                 fullsizeUrl: urls.raw,
                 author: user.name,

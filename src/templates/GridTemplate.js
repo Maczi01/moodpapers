@@ -29,7 +29,8 @@ const GridTemplate = ({cards}) => (
 )
 
 GridTemplate.propTypes = {
-    cards: PropTypes.arrayOf(
+    cards:
+        PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.string,
             imageUrl: PropTypes.string,
