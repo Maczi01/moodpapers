@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@storybook/addon-knobs": "^5.0.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "formik": "^1.5.2",
     "modern-normalize": "^0.5.0",
     "react": "^16.8.4",
